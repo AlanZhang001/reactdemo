@@ -3,7 +3,8 @@
 
 ## 不错的学习文章
 
-- [阮一峰 React 入门实例教程](https://github.com/AlanZhang001/reactdemo.git)
+- [阮一峰 React 入门实例教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
+- [React demo](https://github.com/ruanyf/react-demos)
 - [官方文档](http://reactjs.cn/react/docs/getting-started-zh-CN.html)
 
 
