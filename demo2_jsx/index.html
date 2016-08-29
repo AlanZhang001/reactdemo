@@ -9,6 +9,7 @@
             <li>JSX 的基本语法规则：遇到 HTML 标签（以 < 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析</li>
         </ol>
         <p id="hello"></p>
+        <p id="world"></p>
         <script type="text/javascript" src="../scripts/react.min.js"></script>
         <script type="text/javascript" src="../scripts/react-dom.min.js"></script>
         <script type="text/javascript" src="../scripts/browser.min.js"></script>
@@ -21,6 +22,16 @@
                     })
                 }</div>,
                 document.querySelector("#hello")
+            );
+
+            var words = [
+                <a>hello！</a>,
+                <a>world！</a>
+            ];
+
+            ReactDOM.render(
+                <div>{words}</div>,
+                document.querySelector("#world")
             );
         </script>
     </body>

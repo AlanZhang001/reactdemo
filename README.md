@@ -1,7 +1,7 @@
 # reactdemo
 学习react的demo，方便在公司和家里学习
 
-## 不错的学习文章
+## 学习资料
 
 - [阮一峰 React 入门实例教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
 - [React demo](https://github.com/ruanyf/react-demos)
