@@ -7,32 +7,10 @@
     <body>
         <ol>
             <li>JSX 的基本语法规则：遇到 HTML 标签（以 < 开头），就用 HTML 规则解析；遇到代码块（以 { 开头），就用 JavaScript 规则解析</li>
+            <li>注意：遍历数组时，每个元素，需要有一个唯一的key</li>
         </ol>
-        <p id="hello"></p>
-        <p id="world"></p>
-        <script type="text/javascript" src="../scripts/react.min.js"></script>
-        <script type="text/javascript" src="../scripts/react-dom.min.js"></script>
-        <script type="text/javascript" src="../scripts/browser.min.js"></script>
-        <script type="text/babel">
-            var names = ["zhanglun","张伦","Alanzhang"];
-            ReactDOM.render(
-                <div>{
-                    names.map(function(item){
-                        return <div>Hello,{item}</div>;
-                    })
-                }</div>,
-                document.querySelector("#hello")
-            );
-
-            var words = [
-                <a>hello！</a>,
-                <a>world！</a>
-            ];
-
-            ReactDOM.render(
-                <div>{words}</div>,
-                document.querySelector("#world")
-            );
-        </script>
+        <div id="hello"></div>
+        <div id="world"></div>
+        <script type="text/javascript" src="indexMain.js?v=3452354234dfsgwerktjekl"></script>
     </body>
 </html>
