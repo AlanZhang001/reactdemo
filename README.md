@@ -1,5 +1,5 @@
 # reactdemo
-学习react的demo，方便在公司和家里学习
+学习react的demo
 
 ## 学习资料
 
