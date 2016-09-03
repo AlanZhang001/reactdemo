@@ -1,17 +1,54 @@
-var webpack = require("webpack");
+// var webpack = require("webpack");
+
+var fs = require("fs");
+var path = require("path");
+
+var entryMap = {};
+
+fs.readdir(__dirname, function (err, files) {
+
+    files.forEach(function(dir, index) {
+
+        if (fs.stat(path.join(__dirname,dir)).isDirectory() && dir.filename.indexOf("demo") > -1) {
+
+            // fs.readdir(dir, function(err, files) {
+            //     files.forEach (function(file) {
+            //         if (fs.stat(file).isFile() && /\.jsx&/gi.test(file.filename)) {
+            //             entryMap[file.filename] = path.join(__dirname, dir.filename, file.filename);
+            //         }
+            //     });
+            // });
+
+        }
+    });
+});
+
+console.log(entryMap);
+
+/**
+ * [fetchPath 提取出./demoXXX/index.jsx的路径组装成entry]
+ * @return {[type]} [description]
+ */
+var fetchPath = function () {
+    'use strict';
+
+    return {
+        indexMain: './demo2_jsx/index.jsx'
+    };
+};
 
 module.exports = {
-    entry: './demo2_jsx/index.jsx',
+    entry: fetchPath(),
     plugins: [],
     output: {
         libraryTarget: 'umd',
-        filename: './demo2_jsx/indexMain.js'
+        filename: '[name].js'
     },
     resolve: {
         modulesDirectories: ["./node_modules"]
     },
     //加载器配置
-    module:{
+    module: {
         loaders: [
             //.css 文件使用 style-loader 和 css-loader 来处理
             {
@@ -32,16 +69,15 @@ module.exports = {
             {
                 test: /\.(png|jpg)$/,
                 loader: 'url-loader?limit=8192'
-            },
-            {
+            }, {
                 test: /\.jsx?$/,
                 exclude: /node_modules/,
                 loader: 'babel-loader',
                 query: {
                     presets: ['react', 'es2015']
                 }
-            },
+            }
         ]
     },
-    watch: true
+    watch: false
 };
