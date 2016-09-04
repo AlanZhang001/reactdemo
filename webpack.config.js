@@ -1,48 +1,46 @@
-// var webpack = require("webpack");
+var webpack = require("webpack");
 
 var fs = require("fs");
 var path = require("path");
 
-var entryMap = {};
-
-fs.readdir(__dirname, function (err, files) {
-
-    files.forEach(function(dir, index) {
-
-        if (fs.stat(path.join(__dirname,dir)).isDirectory() && dir.filename.indexOf("demo") > -1) {
-
-            // fs.readdir(dir, function(err, files) {
-            //     files.forEach (function(file) {
-            //         if (fs.stat(file).isFile() && /\.jsx&/gi.test(file.filename)) {
-            //             entryMap[file.filename] = path.join(__dirname, dir.filename, file.filename);
-            //         }
-            //     });
-            // });
-
-        }
-    });
-});
-
-console.log(entryMap);
-
 /**
- * [fetchPath 提取出./demoXXX/index.jsx的路径组装成entry]
+ * [fetchPath 提取出./demoXXX/index.jsx的路径组装成entry
+ *  此处的map对象，为了使打包的文件能在各自的目录下，需要配置entryMap的key为具体的路径加上js文件名称，
+ *  再配置output.fileName时使用此名称即可
+ *  参考：http://webpack.toobug.net/zh-cn/chapter3/config.html
+ * ]
  * @return {[type]} [description]
  */
-var fetchPath = function () {
+function fetchDemoJsx(dirpath) {
     'use strict';
+    var entryMap = {};
+    fs.readdirSync(dirpath).map(function (file) {
+        return path.join(dirpath, file);
+    }).filter(function (file) {
+        return /demo\d+_/gi.test(file) && fs.statSync(file).isDirectory();
+    }).forEach(function (dir) {
+        var filePath = path.join(dir, "index.jsx");
 
-    return {
-        indexMain: './demo2_jsx/index.jsx'
-    };
-};
+        if (fs.existsSync(filePath) && fs.statSync(filePath).isFile()) {
+            entryMap[dir + "/index"] = filePath;
+        }
+    });
+
+    return entryMap;
+}
 
 module.exports = {
-    entry: fetchPath(),
-    plugins: [],
+    entry: fetchDemoJsx(__dirname),
+    plugins: [
+        new webpack.optimize.UglifyJsPlugin({
+            compressor: {
+                warnings: false
+            }
+        })
+    ],
     output: {
         libraryTarget: 'umd',
-        filename: '[name].js'
+        filename: '[name]Main.js'
     },
     resolve: {
         modulesDirectories: ["./node_modules"]
@@ -79,5 +77,13 @@ module.exports = {
             }
         ]
     },
+    // 将react和reactdom从打包文件中分离出来，使react可缓存使用，同时减小打包文件的大小；
+    // 在页面通过script引入相关js，在js中使用时不在需要require这些js;
+    // 这里配置相当于做了这样一个操作:module.exports = window.React;module.exports = window.ReactDOM;
+    externals:{
+        "React": "react",
+        "ReactDOM": "react-dom",
+    },
+    // devtool: "#source-map",
     watch: false
 };

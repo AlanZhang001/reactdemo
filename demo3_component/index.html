@@ -18,29 +18,9 @@
             <li>组件的属性可以在组件类的 this.props 对象上获取</li>
             <li>添加组件属性，有一个地方需要注意，就是 class 属性需要写成 className ，for 属性需要写成 htmlFor ，这是因为 class 和 for 是 JavaScript 的保留字</li>
         </ol>
-        <p id="hello"></p>
-
-        <script type="text/javascript" src="../scripts/react.min.js"></script>
-        <script type="text/javascript" src="../scripts/react-dom.min.js"></script>
-        <script type="text/javascript" src="../scripts/browser.min.js"></script>
-        <script type="text/babel">
-
-            var HelloMessage = React.createClass({
-                render: function(){
-                    return <h1 className={this.props.className}>this is component:{this.props.name}</h1>
-                }
-            });
-
-            var names = ["zhanglun","张伦","Alanzhang"];
-            ReactDOM.render(
-                <div>{
-                    names.map(function(item){
-                        return <HelloMessage name={item} className="demo" htmlFor="demo"/>;
-                    })
-                }</div>,
-                document.querySelector("#hello")
-            );
-
-        </script>
+        <div id="hello"></div>
+        <script src="../scripts/react.min.js"></script>
+        <script src="../scripts/react-dom.min.js"></script>
+        <script type="text/javascript" src="indexMain.js"> </script>
     </body>
 </html>

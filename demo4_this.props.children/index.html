@@ -16,36 +16,9 @@
             <li>React 提供一个工具方法 React.Children 来处理 this.props.children 。 </li>
             <li>React.Children.map 来遍历子节点，而不用担心 this.props.children 的数据类型是 undefined 还是 object</li>
         </ol>
-        <p id="hello"></p>
-
-        <script type="text/javascript" src="../scripts/react.min.js"></script>
-        <script type="text/javascript" src="../scripts/react-dom.min.js"></script>
-        <script type="text/javascript" src="../scripts/browser.min.js"></script>
-        <script type="text/babel">
-
-            var NotesList  = React.createClass({
-                render: function(){
-                    return (
-                        <lo>
-                            {
-                                React.Children.map(this.props.children,function(item){
-                                    return <li>{item}</li>
-                                })
-                            }
-                        </lo>
-                    );
-                }
-            });
-
-            var names = ["zhanglun","张伦","Alanzhang"];
-            ReactDOM.render(
-                <NotesList>
-                    <span>alanzhang</span>
-                    <span>zhanglun</span>
-                </NotesList>,
-                document.querySelector("#hello")
-            );
-
-        </script>
+        <div id="hello"></div>
+        <script src="../scripts/react.min.js"></script>
+        <script src="../scripts/react-dom.min.js"></script>
+        <script type="text/javascript" src="indexMain.js"></script>
     </body>
 </html>

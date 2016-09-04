@@ -10,32 +10,9 @@
             <li>PropTypes属性,更多值可以查看<a href="https://facebook.github.io/react/docs/reusable-components.html">官方文档</a>。</li>
             <li>getDefaultProps 方法可以用来设置组件属性的默认值 </li>
         </ol>
-        <p id="hello"></p>
-
-        <script type="text/javascript" src="../scripts/react.min.js"></script>
-        <script type="text/javascript" src="../scripts/react-dom.min.js"></script>
-        <script type="text/javascript" src="../scripts/browser.min.js"></script>
-        <script type="text/babel">
-
-            var Mytitle = React.createClass({
-                PropTypes:{
-                    title:React.PropTypes.string.isRequired
-                },
-                getDefaultProps:function() {
-                    return {
-                        name:"zhanglun"
-                    }
-                },
-                render: function(){
-                    return <div>title:{this.props.title},name:{this.props.name}</div>;
-                }
-            });
-
-            ReactDOM.render(
-                <Mytitle title="string demo"/>,
-                document.querySelector("#hello")
-            );
-
-        </script>
+        <div id="hello"></div>
+        <script src="../scripts/react.min.js"></script>
+        <script src="../scripts/react-dom.min.js"></script>
+        <script type="text/javascript" src="indexMain.js"></script>
     </body>
 </html>
