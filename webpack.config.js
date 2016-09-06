@@ -79,10 +79,10 @@ module.exports = {
     },
     // 将react和reactdom从打包文件中分离出来，使react可缓存使用，同时减小打包文件的大小；
     // 在页面通过script引入相关js，在js中使用时不在需要require这些js;
-    // 这里配置相当于做了这样一个操作:module.exports = window.React;module.exports = window.ReactDOM;
+    // 这里的key为别名，value为源码中exports的名称;
     externals:{
-        "React": "react",
-        "ReactDOM": "react-dom",
+        "React": "React",
+        "ReactDOM": "ReactDOM",
     },
     // devtool: "#source-map",
     watch: false
