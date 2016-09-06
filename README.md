@@ -1,7 +1,7 @@
 大多数人努力程度之低，根本用不到比智商！
 
 # reactdemo
-学习react的demo
+1.demo1-demo9参照阮一峰老师的入门教程学习react的demo;
 
 ## 学习资料
 
