@@ -1,0 +1,34 @@
+{
+  "name": "reactdemo",
+  "version": "1.0.0",
+  "description": "大多数人努力程度之低，根本用不到比智商！",
+  "main": "gulpfile.js",
+  "dependencies": {
+    "babel-core": "^6.14.0",
+    "babel-loader": "^6.2.5",
+    "babel-preset-react": "^6.11.1",
+    "css-loader": "^0.24.0",
+    "babel-preset-es2015": "^6.14.0",
+    "file-loader": "^0.9.0",
+    "jsx-loader": "^0.13.2",
+    "react": "^15.3.1",
+    "react-dom": "^15.3.1",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.2"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/AlanZhang001/reactdemo.git"
+  },
+  "author": "alanzhang",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/AlanZhang001/reactdemo/issues"
+  },
+  "homepage": "https://github.com/AlanZhang001/reactdemo#readme"
+}
