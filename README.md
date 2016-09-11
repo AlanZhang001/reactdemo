@@ -10,6 +10,7 @@
 - [官方文档](http://reactjs.cn/react/docs/getting-started-zh-CN.html)
 - [React Router 使用教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html)
 - [react-router官方demo](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/01-setting-up)
+- [React Router 中文文档](https://react-guide.github.io/react-router-cn/docs/Introduction.html)
 
 ## 相关资料
 
