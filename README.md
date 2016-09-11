@@ -6,9 +6,10 @@
 ## 学习资料
 
 - [阮一峰 React 入门实例教程](http://www.ruanyifeng.com/blog/2015/03/react.html)
-- [React demo](https://github.com/ruanyf/react-demos)
+- [阮一峰 React demo](https://github.com/ruanyf/react-demos)
 - [官方文档](http://reactjs.cn/react/docs/getting-started-zh-CN.html)
-
+- [React Router 使用教程](http://www.ruanyifeng.com/blog/2016/05/react_router.html)
+- [react-router官方demo](https://github.com/reactjs/react-router-tutorial/tree/master/lessons/01-setting-up)
 
 ## 相关资料
 
