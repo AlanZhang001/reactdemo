@@ -15,6 +15,7 @@
 ## 相关资料
 
 - [babel的使用](https://babeljs.io/)
+- [jsx入门教程](https://hulufei.gitbooks.io/react-tutorial/content/index.html)
 - [JSX in Depth](http://reactjs.cn/react/docs/jsx-in-depth.html)
 - [React v0.14 概览](https://undefinedblog.com/react-v0-14/)
 - [babel-browser has been removed](https://babeljs.io/docs/usage/browser/)
